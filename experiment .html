@@ -1,22 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Armstrong Number Checker</title>
-    <link rel="stylesheet" href="app.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Armstrong Number Checker</title>
+  <link rel="stylesheet" href="app.css"/>
 </head>
 <body>
+  <div class="card">
+    <span class="badge">Number Theory</span>
+    <h1>Armstrong Number<br>Checker</h1>
+    <p class="subtitle">
+       An Armstrong number equals the sum of its own digits each raised
+      to the power of the number of digits.
+    </p>
 
-    <div class="container">
-        <h2>Armstrong Number Checker</h2>
+  <div class="input-wrap">
+    <input
+      type="number"
+      id="numInput"
+      placeholder="0"
+      min="0"
+      autocomplete="off"
+      onkeydown="if(event.key==='Enter') checkArmstrong()"
+    />
+  </div>
+  <div class="error-msg" id="errMsg"></div>
 
-        <input type="number" id="number" placeholder="Enter a number">
+  <button onclick="checkArmstrong()">Check Number</button>
 
-        <button onclick="checkArmstrong()">Check</button>
+  <div class="result" id="result">
+    <div class="result-verdict" id="verdict"></div>
+    <div class="result-detail"  id="detail"></div>
+  </div>
 
-        <p id="result"></p>
+  <div class="examples">
+    <div class="examples-label">Try a known Armstrong number</div>
+    <div class="chips">
+      <span class="chip" onclick="tryExample(1)">1</span>
+      <span class="chip" onclick="tryExample(153)">153</span>
+      <span class="chip" onclick="tryExample(370)">370</span>
+      <span class="chip" onclick="tryExample(371)">371</span>
+      <span class="chip" onclick="tryExample(407)">407</span>
+      <span class="chip" onclick="tryExample(1634)">1634</span>
     </div>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
